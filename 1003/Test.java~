@@ -1,0 +1,14 @@
+public class Test {
+
+    public static void main(String[] args){
+
+	BankAccount kavin = new BankAccount();
+	kavin.setAccPass("Kavin Seo","kavinseo01");
+	kavin.setPinNum(2000,00001);
+        kavin.printInfo();
+	kavin.deposit(30);
+	kavin.withdraw(10);
+    }
+}
+	
+	

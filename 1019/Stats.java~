@@ -1,0 +1,124 @@
+public class Stats{
+    //Methods
+    public static int mean(int a, int b){
+	return (int) (a+b)/2;//Finds the sum of integers a and b and divides it by 2, typecast if necessary
+    }
+    public static double mean(double a,double b){
+	return (a+b)/2;//Finds the sum of double a and b and divides it by 2
+    }
+    public static int max(int a,int b){
+	int retNum;
+        if (a >= b){//if first integer is larger, or if they are equal, set retNum to first integer
+	    retNum = a;
+	}
+	else {//if second integer is larger, set retNum to second integer
+	    retNum = b;
+	}
+	return retNum;//return retNum
+    }
+    public static double max(double a, double b){
+	double retNum;
+	if (a >= b){//if a is larger, or if they are equal, set retNum to a
+	    retNum = a;
+	}
+        else {//if b is larger, set retNum to b
+	    retNum = b;
+	}
+	return retNum;//return retNum
+    }
+    public static int geoMean(int a,int b){
+	return (int) Math.sqrt(a * b);//return the typecasted form of the square root of a times b
+    }
+    public static double geoMean(double a, double b){
+	return Math.sqrt(a * b);//returns the square root of a times b
+    }
+    public static int max(int a, int b, int c){
+	if (a > b && a > c){//if a is greater than b and c, return a
+	    return a;
+	}
+	else if (b > a && b > c){//if b is greater than a and c, return b
+	    return b;
+	}
+	else if (c > a && c > b){//if c is greater than a and b, return c
+	    return c;
+	}
+	else {//if they are equal, returning a would be the same as returning b or c
+	    return a;
+	}
+    }
+    public static double max(double a,double b,double c){
+	if (a > b && a > c){//if a is greater than b and c, return a
+	    return a;
+	}
+	else if (b > a && b > c){//if b is greater than a and c, return b
+	    return b;
+	}
+	else if (c > a && c > b){//if c is greayer than a and b, return c
+	    return c;
+	}
+	else {//if they are equal, returning a would be the same as returning b or c
+	    return a;
+	}
+    }
+    public static int geoMean(int a,int b,int c){
+	return (int) Math.pow(a*b*c,(1.0/3));//return the cube root of a*b*c, typecast to avoid loss of precision since Math.pow has a double return type
+    }
+    public static double geoMean(double a,double b,double c){
+	return Math.pow(a*b*c,(1.0/3));//return the cube root of a*b*c
+    }
+
+
+
+    //--------------------------------------------------------------
+    
+    //Start of GCD methods
+
+    public static int gcd(int a,int b) {//brute force approach
+	int x = 1;
+	int retNum = 1;
+	while (x < a && x < b){
+	    if (a % x == 0 && b % x == 0){
+		retNum = x;
+		x += 1;
+	    }
+	    else {
+		x += 1;
+	    }
+	}
+	return retNum;
+    }
+
+    public static int gcdER(int a,int b){//Euclid's GCD Recursion
+	if (b > a) {
+	    return gcdER(b, a); } //rearranges numbers to (smaller,larger)
+	if (a % b == 0) { 
+	    return b; } //returns smaller number
+	return gcdER(a % b, b);//recursion on (remainder,smaller)	    
+    }
+
+    public static int gcdEW(int a,int b){
+	if (a > b) {
+	    return gcdEW(b, a);} // rearranges numbers to (smaller,larger)
+	while (b % a != 0){
+	    int remainder = b % a; // to keep track of b % a
+	    b = a;
+	    a = remainder;
+	}
+	return a;
+    }
+    /* Euclid's Algorithm takes two positive integers, a and b, and return their greatest common factor. It states that if a is less than b, then exchange a and b so then the first number is the larger one. Then, you divide a by b, and if the remainder is 0, then b is the GCD. If the remainder is not 0, you repeat the steps but substitute b in for a and substitute the remainder in for b. */
+    
+    //MAIN METHOD
+    /*        public static void main(String[] args){
+	System.out.println(gcd(15,20));
+	System.out.println(gcd(100,99));
+	System.out.println(gcd(20,15));
+	System.out.println(gcdER(15,20));
+	System.out.println(gcdER(100,99));
+	System.out.println(gcdER(20,15));
+	System.out.println(gcdEW(15,20));
+	System.out.println(gcdEW(100,99));
+	System.out.println(gcdEW(20,15));
+	}
+    */
+}
