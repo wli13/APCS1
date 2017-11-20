@@ -1,10 +1,32 @@
 //Wenting Li
 //APCS1 pd08
-//HW36 -- Be Rational
-//2017-11-20
+//HW37 -- Be More Rational
+//2017-11-21
 
-//FINISHED
+//
 //=====================================
+
+/* Phase II:
+ *Add a static gcd method with two int parameters.
+ *Add the following non-static methods:
+ **add
+ ****Takes 1 Rational object (just like multiply) and adds it to the current rational number object
+ ****Need not reduce
+ **subtract
+ ****Works the same as add, except the operation is subtraction
+ 
+ **gcd
+ ****Returns the gcd of the numerator and denominator of this Rational
+
+ **reduce
+ ****Changes this Rational to one in reduced form (should use gcd)
+
+ **compareTo
+ ****Takes a Rational parameter and compares it to the calling object
+ ****Returns 0 if the two numbers are equal
+ ****Returns a positive integer if the calling number is larger than the parameter
+ ****Returns a negative integer if the calling number is smaller than the parameter
+  ===================================== */
 
 public class Rational {
 	//represents a rational number
@@ -90,6 +112,24 @@ public class Rational {
 	    	System.out.println("Error. Division by 0.");
 	    }
 	}
+
+	//===============================================
+	//Phase II of development:
+
+    /*=====================================
+      int gcd(int,int) 
+      pre:  int a and b exists
+      post: returns the greatest common denominator of a and b, recursively
+      =====================================*/
+    public static int gcd(int a,int b){
+	//rearranges numbers to (larger,smaller)
+	if (b > a) {
+	    return gcd(b, a); }
+	
+	if (a % b == 0) { 
+	    return b; } //returns smaller number
+	return gcd(a % b, b);//recursion on (remainder,smaller)	    
+    }
 
 
 	//test cases!
