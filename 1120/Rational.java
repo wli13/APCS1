@@ -78,7 +78,7 @@ public class Rational {
     /*=====================================
       void divide(Rational)
       pre:  Rational b exists
-      post: divide this rational by b and sets this rational to the quotient
+      post: divides this rational by b and sets this rational to the quotient
             need not reduce the fraction
       =====================================*/
 	public void divide(Rational b) {
@@ -104,9 +104,9 @@ public class Rational {
 	System.out.print("Multiplying 2/3 by 1/2 = ");
 	System.out.println(r); //prints out 2/6
 
-	r.divide(s); //Divides new r by s, changes r to 2/3. s remains 1/2
+	r.divide(s); //Divides new r by s, changes r to 4/6. s remains 1/2
 	System.out.print("Dividing 2/6 by 1/2 = ");
-	System.out.println(r); //prints out 2/3
+	System.out.println(r); //prints out 4/6
 	
 	}
 }//end of class Rational
