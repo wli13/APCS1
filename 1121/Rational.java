@@ -228,6 +228,6 @@ public class Rational {
 	System.out.println(r.compareTo(s)); //prints 1
 	System.out.println(r.compareTo(u)); //prints -1
 
-	}
+	}//end of main method
 
 }//end of class Rational
