@@ -26,7 +26,7 @@ public class Swapper {
 	private static int column1;
 	private static int column2;
 
-
+	
 	public static void createArr(int rows, int columns) {
 		_arr = new String[rows][columns];
 		for (int i = 0; i < rows; i++) {

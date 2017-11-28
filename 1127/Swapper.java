@@ -33,6 +33,8 @@ public class Swapper {
 	private static int ecolumn1;
 	private static int ecolumn2;
 
+	pri
+
 	public static void newArr() {
 		System.out.println("~~~ Welcome to THE Swapper Program! ~~~\n");
 

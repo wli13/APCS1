@@ -1,6 +1,6 @@
 //Wenting Li
 //APCS1 pd08    
-//HW41 --
+//HW41 -- Array of Steel
 //2017-11-28
 
 //FINISHED
@@ -20,8 +20,8 @@ public class SuperArray {
 
   //default constructor – initializes 10-item array
     public SuperArray() {
-      _data = new int[10];
       _size = 10;
+      _data = new int[_size];
   }
 
 
