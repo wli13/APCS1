@@ -3,7 +3,7 @@
 //HW42 -- Array of Grade 316
 //2017-11-29
 
-//
+//FINISHED
 //=====================================
 
 /***************************
@@ -75,6 +75,10 @@ public class SuperArray {
 
   //adds an item after the last item
   public void add( int newVal ) {
+    //ensures that there is enough slots to add new elements
+    if ( _size > _data.length )
+      expand();
+    
     _data[_size] = newVal;
     _size += 1;
   }
@@ -82,11 +86,15 @@ public class SuperArray {
 
   //inserts an item at index
   public void add( int index, int newVal ) {
-    //when a nonsignificant element is set to a nonzero value, increase the size
-    if (_data[index] == 0 && newVal != 0) 
-      _size += 1;    
-    
+    //ensures that there is enough slots to add new elements
+    if ( _size > _data.length )
+      expand();
+
+    for (int i = _size; i > index; i--) {
+      _data[i] = _data[i - 1];
+    }
     _data[index] = newVal;
+    _size += 1;
   }
 
 
