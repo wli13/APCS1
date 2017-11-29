@@ -33,8 +33,11 @@ public class Swapper {
 	private static int ecolumn1;
 	private static int ecolumn2;
 
-	pri
-
+    /*=====================================
+      Rational() -- default constructor
+      pre:  Integer variables p and q exist
+      post: creates a new Rational with the value of 0/1
+      =====================================*/
 	public static void newArr() {
 		System.out.println("~~~ Welcome to THE Swapper Program! ~~~\n");
 
