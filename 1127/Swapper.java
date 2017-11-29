@@ -1,6 +1,6 @@
 //Wenting Li
 //APCS1 pd08    //Collaboration with Woosuk Lee pd01
-//HW40
+//HW40 -- Make it Better
 //2017-11-27
 
 //
@@ -14,9 +14,9 @@
 *   - redisplay the array
 */
 
-/*  ____
-
-*/
+/* Phase II:
+ * 
+ * ===================================== */
 
 import cs1.Keyboard;
 

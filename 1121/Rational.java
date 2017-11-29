@@ -22,6 +22,7 @@
  *  - Returns 0 if the two numbers are equal
  *  - Returns a positive integer if the calling number is larger than the parameter
  *  - Returns a negative integer if the calling number is smaller than the parameter
+ *
  * ===================================== */
 
 public class Rational {
