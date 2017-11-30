@@ -8,13 +8,13 @@
 public interface ListInt
 {
   // Return number of elements in the list
-  int size();
+  int size() ;
 
   // Append an int to the end. Return true.
   boolean add( int num );
 
   // Insert an int at index
-  void add( int index, int num ); 
+  void add( int index, int num ) ; 
 
   // Retrieve the int at index
   int get( int index );

@@ -1,7 +1,10 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW43 -- adhering to a published standard (implementing an interface)
-// 2017-11-30r
+//Wenting Li
+//APCS1 pd08    //Collaboration with Woosuk Lee pd01
+//HW43 -- adhering to a published standard (implementing an interface)
+//2017-11-30
+
+//FINISHED
+//=====================================
 
 /***************************
  * class SuperArray version 3.0
@@ -18,7 +21,7 @@
  * ListInt interface. (ListInt.java must be in same dir as this file)
  ***************************/
 
-public class SuperArray
+public class SuperArray implements ListInt
 {
 
   private int[] _data;  //underlying container
@@ -76,9 +79,11 @@ public class SuperArray
 
 
   //adds an item after the last item
-  public void add( int newVal )
+  //return true
+  public boolean add( int newVal )
   {
     add( _size, newVal );
+    return true;
   }
 
 
@@ -98,13 +103,18 @@ public class SuperArray
 
   //removes the item at index
   //shifts elements left to fill in newly-empted slot
-  public void remove( int index )
+  //return removed value
+  public int remove( int index )
   {
+    int temp = _data[index];
+
     for( int i = index; i < _size - 1; i++ ) {
       _data[i] = _data[i+1];
     }
     _data[_size-1] = 0;
     _size--;
+
+    return temp;
   }
 
 
@@ -119,24 +129,23 @@ public class SuperArray
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
     ListInt mayfield = new SuperArray();
     System.out.println("Printing empty SuperArray mayfield...");
     System.out.println(mayfield);
 
-    mayfield.add(5);
-    mayfield.add(4);
-    mayfield.add(3);
-    mayfield.add(2);
-    mayfield.add(1);
+    System.out.println("add(5)? " + mayfield.add(5));
+    System.out.println("add(4)? " + mayfield.add(4));
+    System.out.println("add(3)? " + mayfield.add(3));
+    System.out.println("add(2)? " + mayfield.add(2));
+    System.out.println("add(1)? " + mayfield.add(1));
 
     System.out.println("Printing populated SuperArray mayfield...");
     System.out.println(mayfield);
 
-    mayfield.remove(3);
+    System.out.println("removed: " + mayfield.remove(3));
     System.out.println("Printing SuperArray mayfield post-remove...");
     System.out.println(mayfield);
-    mayfield.remove(3);
+    System.out.println("removed: " + mayfield.remove(3));
     System.out.println("Printing SuperArray mayfield post-remove...");
     System.out.println(mayfield);
 
@@ -149,6 +158,8 @@ public class SuperArray
     mayfield.add(1,77);
     System.out.println("Printing SuperArray mayfield post-insert...");
     System.out.println(mayfield);
+
+    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~    
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
