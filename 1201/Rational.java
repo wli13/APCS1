@@ -160,28 +160,14 @@ public class Rational implements Comparable
     //reducing this fraction
     reduce();
 
-    if (other instanceof Rational) { 
-      Rational pigeon = (Rational) other;
-      return (( _denominator == pigeon._denominator) 
-            && (_numerator == pigeon._numerator) );
-          }
-      return false;
+    if (other instanceof Rational)
+	//reducing other fraction
+	((Rational)other).reduce();
 
-/*    if(other instanceof Rational){
-        Rational pigeon = (Rational) other;
-        
-        //reducing other fraction
-        other.reduce();
+    //short circuiting at work!?
+    return (this == other) //checks for aliases
+	     || (compareTo(other) == 0); //checks if fractions are equal
 
-        return  (compareTo(other) == 0);
-    }
-    return false;
-*/
-
-/*      return ( ((Rational) other) instanceof Rational )
-            && (compareTo(other) == 0);
-      //why doesn't this work????
-*/
   }//end equals()
 
 
@@ -193,7 +179,7 @@ public class Rational implements Comparable
    *    Return negative integer if this < other.
    *    Return positive integer if this > other.
    *********************/
-  public int compareTo( Object other )
+    public int compareTo( Object other )
   {
     // If other is not a Rational, throw an exception
     // This will exit the function, generating a runtime error
@@ -297,6 +283,9 @@ public class Rational implements Comparable
       //  System.out.println( "s > y: " +  s.compareTo(y) );
 
       System.out.println("\nNow testing equals...");
+      System.out.println( "v = " + v );
+      System.out.println( "w = " + w );
+      System.out.println( "x = " + x );            
       System.out.println( "v.equals(v): " + v.equals(v) );
       System.out.println( "v.equals(w): " + v.equals(w) );
       System.out.println( "w.equals(x): " + w.equals(x) );
