@@ -157,14 +157,31 @@ public class Rational implements Comparable
   {
     //First, reduce both fractions.
     //...thus allowing for direct comparison of attributes
+    //reducing this fraction
     reduce();
 
     if (other instanceof Rational) { 
       Rational pigeon = (Rational) other;
       return (( _denominator == pigeon._denominator) 
-            && (compareTo(other) == 0));
+            && (_numerator == pigeon._numerator) );
           }
       return false;
+
+/*    if(other instanceof Rational){
+        Rational pigeon = (Rational) other;
+        
+        //reducing other fraction
+        other.reduce();
+
+        return  (compareTo(other) == 0);
+    }
+    return false;
+*/
+
+/*      return ( ((Rational) other) instanceof Rational )
+            && (compareTo(other) == 0);
+      //why doesn't this work????
+*/
   }//end equals()
 
 
