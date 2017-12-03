@@ -1,3 +1,8 @@
+//Wenting Li
+//APCS1 pd08
+//HW10 -- No Money Mo Problems
+//2017-10-04
+
 public class BankAccount {
 
     private String accName;
