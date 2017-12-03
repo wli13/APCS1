@@ -146,6 +146,7 @@ public class SuperArray implements List
   //main method for testing
   public static void main( String[] args )
   {
+        /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
     List mayfield = new SuperArray();
     System.out.println("Printing empty SuperArray mayfield...");
     System.out.println(mayfield);
@@ -175,7 +176,7 @@ public class SuperArray implements List
     mayfield.add(1,77);
     System.out.println("Printing SuperArray mayfield post-insert...");
     System.out.println(mayfield);
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
+
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
