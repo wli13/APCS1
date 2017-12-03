@@ -185,7 +185,7 @@ public class Rational implements Comparable
     // This will exit the function, generating a runtime error
     
     if (!(other instanceof Rational)) 
-      throw new ClassCastException ("\nTurn around and reflect on your mistakes.");
+      throw new ClassCastException ("Turn around and reflect on your mistakes.");
     else {
       Rational pigeon = (Rational) other;
       return (_numerator * pigeon._denominator)
@@ -276,7 +276,7 @@ public class Rational implements Comparable
       System.out.println(r);
 
       System.out.println("\nNow testing compareTo...");
-      System.out.println( "r > t: " +  r.compareTo(t) );
+      System.out.println( "r > t: " +  r.compareTo(test) );
       System.out.println( "r > s: " +  r.compareTo(s) );
       System.out.println( "s > t: " +  s.compareTo(t) );
       //uncommenting the line below should trigger a runtime error
