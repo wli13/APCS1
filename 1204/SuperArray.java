@@ -90,7 +90,7 @@ public class SuperArray implements List
 
   //adds an item after the last item
   public boolean add( Object o )
-  {
+  { 
     add( _size, o );
     return true;
   }
@@ -99,7 +99,8 @@ public class SuperArray implements List
   //inserts an item at index
   public void add( int index, Object o )
   {
-    exceptionThrowing(index);
+    if (_size != 0)
+      exceptionThrowing(index);
 
     //first expand if necessary
     if ( _size >= _data.length )
