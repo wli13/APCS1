@@ -1,11 +1,14 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW43 -- adhering to a published standard (implementing an interface)
-// 2017-11-30r
+//Wenting Li
+//APCS1 pd08    
+//HW45 -- In America, the Driver Sits on the Left
+//2017-12-04 
+
+//
+//=====================================
 
 /***************************
- * class SuperArray version 3.0
- * Wrapper class for array. Facilitates resizing,
+ ** class SuperArray version 4.0
+  Wrapper class for growable arrays that store Objects that features:
  * resizing
  * expansion
  * read/write capability on elements
@@ -14,19 +17,27 @@
  * removing an element at specified index
  *
  * ...and now SuperArray complies with the specifications of the
- * ListInt interface. (ListInt.java must be in same dir as this file)
+ * List interface. (List.java must be in same dir as this file)
+
+ ** from version 3.0, modified:
+ * add(Object)
+ * add(int, Object)
+ * size()
+ * get(int)
+ * set(int, Object)
+ * remove(int)
  ***************************/
 
-public class SuperArray implements ListInt
+public class SuperArray implements List
 {
-  private int[] _data;  //underlying container
+  private Object[] _data;  //underlying container
   private int _size;    //number of elements in this SuperArray
 
 
   //default constructor – initializes 10-item array
   public SuperArray()
   {
-    _data = new int[10];
+    _data = new Object[10];
     _size = 0;
   }
 
@@ -49,7 +60,7 @@ public class SuperArray implements ListInt
   //double capacity of SuperArray
   private void expand()
   {
-    int[] temp = new int[ _data.length * 2 ];
+    Object[] temp = new Object[ _data.length * 2 ];
     for( int i = 0; i < _data.length; i++ )
       temp[i] = _data[i];
     _data = temp;
@@ -57,8 +68,10 @@ public class SuperArray implements ListInt
 
 
   //accessor -- return value at specified index
-  public int get( int index )
+  public Object get( int index )
   {
+    if (index < 0 || index >= size()) 
+      throw new IndexOutOfBoundsException ("Error: Index out of bounds.") 
     return _data[index];
   }
 
@@ -155,35 +168,3 @@ public class SuperArray implements ListInt
 
 
 }//end class
-
-
-/***
-             ,,########################################,,
-          .*##############################################*
-        ,*####*:::*########***::::::::**######:::*###########,
-      .*####:    *#####*.                 :*###,.#######*,####*.
-     *####:    *#####*                      .###########*  ,####*
-  .*####:    ,#######,                        ##########*    :####*
-  *####.    :#########*,                       ,,,,,,,,.      ,####:
-    ####*  ,##############****************:,,               .####*
-     :####*#####################################**,        *####.
-       *############################################*,   :####:
-        .#############################################*,####*
-          :#####:*****#####################################.
-            *####:                  .,,,:*****###########,
-             .*####,                            *######*
-               .####* :*#######*               ,#####*
-                 *###############*,,,,,,,,::**######,
-                   *##############################:
-                     *####*****##########**#####*
-                      .####*.            :####*
-                        :####*         .#####,
-                          *####:      *####:
-                           .*####,  *####*
-                             :####*####*
-                               *######
-                                 *##
-
-         -Miranda Chaiken '16
-
-         ***/
