@@ -1,9 +1,9 @@
-/*<Wenting> <Li>
-APCS1 pd<10>
-HW<03> -- <Howdy:modify greet function>
-<2017>-<09>-<18> */
+//Wenting Li
+//APCS1 pd08
+//HW03 -- Howdy: modify greet function
+//2017-09-18 
 
-public class Greetnew {
+public class Greet {
     
     public static void greet(String name ) {
 	System.out.print (name);
