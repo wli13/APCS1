@@ -70,40 +70,45 @@ public class SuperArray implements List
   //accessor -- return value at specified index
   public Object get( int index )
   {
-    if (index < 0 || index >= size()) 
-      throw new IndexOutOfBoundsException ("Error: Index out of bounds.") 
+    exceptionThrowing(index);
+
     return _data[index];
   }
 
 
   //mutator -- set value at index to newVal,
   //           return old value at index
-  public int set( int index, int newVal )
+  public Object set( int index, Object o )
   {
-    int temp = _data[index];
-    _data[index] = newVal;
+    exceptionThrowing(index);
+
+    Object temp = _data[index];
+    _data[index] = o;
     return temp;
   }
 
 
   //adds an item after the last item
-  public boolean add( int newVal )
+  public boolean add( Object o )
   {
-    add( _size, newVal );
+    add( _size, o );
     return true;
   }
 
 
   //inserts an item at index
-  public void add( int index, int newVal )
+  public void add( int index, Object o )
   {
+    exceptionThrowing(index);
+
     //first expand if necessary
     if ( _size >= _data.length )
       expand();
+
     for( int i = _size; i > index; i-- ) {
       _data[i] = _data[i-1]; //each slot gets value of left neighbor
     }
-    _data[index] = newVal;
+    _data[index] = o;
     _size++;
   }
 
@@ -111,14 +116,16 @@ public class SuperArray implements List
   //removes the item at index
   //shifts elements left to fill in newly-empted slot
   //returns removed value
-  public int remove( int index )
+  public Object remove( int index )
   {
-    int retInt = _data[index];
+    exceptionThrowing(index);
+
+    Object ret = _data[index];
     for( int i = index; i < _size - 1; i++ ) {
       _data[i] = _data[i+1];
     }
     _size--;
-    return retInt;
+    return ret;
   }
 
 
@@ -128,12 +135,18 @@ public class SuperArray implements List
     return _size;
   }
 
+  //helper function for Exception throwing
+  private void exceptionThrowing(int index) 
+  {
+    if (index < 0 || index >= size()) 
+      throw new IndexOutOfBoundsException ("Reflection is required"); 
+  }
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    ListInt mayfield = new SuperArray();
+    List mayfield = new SuperArray();
     System.out.println("Printing empty SuperArray mayfield...");
     System.out.println(mayfield);
 
