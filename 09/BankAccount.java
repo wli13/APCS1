@@ -1,3 +1,8 @@
+//Wenting Li
+//APCS1 pd08
+//HW09 -- CMYM
+//2017-10-03 
+
 public class BankAccount {
 
     String accName;
