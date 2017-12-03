@@ -1,3 +1,8 @@
+//Wenting Li
+//APCS1 pd08
+//HW12 -- Statistically speaking
+//2017-10-06
+
 public class Stats {
 
     public static int mean(int a, int b){
