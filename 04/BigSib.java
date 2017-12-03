@@ -1,7 +1,7 @@
-/*<Wenting> <Li>
-APCS1 pd<10>
-HW<04> -- <Bigsib : A classy division of labor>
-<2017>-<09>-<19> */
+//Wenting Li
+//APCS1 pd08
+//HW04 -- A Classy Division of Labor
+//2017-09-19
 
 public class BigSib {
 
