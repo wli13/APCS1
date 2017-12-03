@@ -1,7 +1,7 @@
-/*Wenting Li
-APCS1 pd08
-HW07 -- On the Origins of a Bigsib
-2017-09-27 */
+//Wenting Li
+//APCS1 pd08
+//HW07 -- On the Origins of a Bigsib
+//2017-09-27 
 
 public class BigSib {
     private String HelloMsg;
