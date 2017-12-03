@@ -99,7 +99,7 @@ public class SuperArray implements List
   //inserts an item at index
   public void add( int index, Object o )
   {
-    if (_size != 0)
+    if (_size != index)
       exceptionThrowing(index);
 
     //first expand if necessary
