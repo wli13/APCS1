@@ -1,5 +1,5 @@
 //Wenting Li
-//APCS1 pd08    
+//APCS1 pd08    //collaboration with Woosuk Lee pd01
 //HW45 -- In America, the Driver Sits on the Left
 //2017-12-04 
 
@@ -37,7 +37,7 @@ public class SuperArray implements List
   //default constructor – initializes 10-item array
   public SuperArray()
   {
-    _data = new Object[10];
+    _data = new Object[1];
     _size = 0;
   }
 
