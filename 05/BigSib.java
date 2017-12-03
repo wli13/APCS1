@@ -1,7 +1,7 @@
-/*<Wenting> <Li>
-APCS1 pd<10>
-HW<05> -- <Bigsib : Leave a lasting impression>
-<2017>-<09>-<25> */
+//Wenting Li
+//APCS1 pd08
+//HW05 -- Leaving a Lasting Impression
+//2017-09-25
 
 public class BigSib {
 
