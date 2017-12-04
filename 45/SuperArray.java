@@ -3,7 +3,7 @@
 //HW45 -- In America, the Driver Sits on the Left
 //2017-12-04 
 
-//
+//FINISHED
 //=====================================
 
 /***************************
@@ -33,12 +33,15 @@ public class SuperArray implements List
   private Object[] _data;  //underlying container
   private int _size;    //number of elements in this SuperArray
 
+  private boolean _switch; // switch for exception throwing in add()
 
-  //default constructor – initializes 10-item array
+  //default constructor – initializes 1-item array
   public SuperArray()
   {
     _data = new Object[1];
     _size = 0;
+
+    _switch = true;
   }
 
 
@@ -91,7 +94,10 @@ public class SuperArray implements List
   //adds an item after the last item
   public boolean add( Object o )
   { 
+    _switch = false;
     add( _size, o );
+    _switch = true;
+
     return true;
   }
 
@@ -99,7 +105,9 @@ public class SuperArray implements List
   //inserts an item at index
   public void add( int index, Object o )
   {
-    if (_size != index)
+    //switch is false whenever add(int,Object) is called through add(Object)) 
+    //if switch is false, don't throw an exception
+    if (_switch)
       exceptionThrowing(index);
 
     //first expand if necessary
@@ -147,37 +155,42 @@ public class SuperArray implements List
   //main method for testing
   public static void main( String[] args )
   {
-        /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
-    List mayfield = new SuperArray();
-    System.out.println("Printing empty SuperArray mayfield...");
-    System.out.println(mayfield);
+    
+    List pigeon = new SuperArray();
+    System.out.println("Printing empty SuperArray pigeon...");
+    System.out.println(pigeon);
 
-    mayfield.add(5);
-    mayfield.add(4);
-    mayfield.add(3);
-    mayfield.add(2);
-    mayfield.add(1);
+    String a = "one";
+    String b = "two";
+    String c = "three";
+    Object d = new Object();
+    Object e = new Object();
 
-    System.out.println("Printing populated SuperArray mayfield...");
-    System.out.println(mayfield);
+    System.out.println(pigeon.add(a));
+    System.out.println(pigeon.add(b));
+    System.out.println(pigeon.add(c));
+    System.out.println(pigeon.add(d));
 
-    mayfield.remove(3);
-    System.out.println("Printing SuperArray mayfield post-remove...");
-    System.out.println(mayfield);
-    mayfield.remove(3);
-    System.out.println("Printing SuperArray mayfield post-remove...");
-    System.out.println(mayfield);
+    System.out.println("Printing populated SuperArray pigeon...");
+    System.out.println(pigeon);
 
-    mayfield.add(3,99);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
-    mayfield.add(2,88);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
-    mayfield.add(1,77);
-    System.out.println("Printing SuperArray mayfield post-insert...");
-    System.out.println(mayfield);
+    System.out.println("Printing SuperArray pigeon post-remove...");
+    System.out.println( ((SuperArray)pigeon).remove(2) );
+    System.out.println(pigeon);
+    System.out.println("Printing SuperArray pigeon post-remove...");
+    System.out.println( ((SuperArray)pigeon).remove(2) );
+    System.out.println(pigeon);
 
+    ((SuperArray)pigeon).add(1,c);
+    System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println(pigeon);
+    ((SuperArray)pigeon).add(2,e);
+    System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println(pigeon);
+    ((SuperArray)pigeon).add(0,d);
+    System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println(pigeon);
+    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
