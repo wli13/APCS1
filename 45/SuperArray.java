@@ -154,15 +154,14 @@ public class SuperArray implements List
 
   //main method for testing
   public static void main( String[] args )
-  {
-    
+  { 
     List pigeon = new SuperArray();
     System.out.println("Printing empty SuperArray pigeon...");
     System.out.println(pigeon);
 
     String a = "one";
-    String b = "two";
-    String c = "three";
+    Integer b = 2;
+    Integer c = new Integer(3);
     Object d = new Object();
     Object e = new Object();
 
@@ -175,21 +174,25 @@ public class SuperArray implements List
     System.out.println(pigeon);
 
     System.out.println("Printing SuperArray pigeon post-remove...");
-    System.out.println( ((SuperArray)pigeon).remove(2) );
+    System.out.println("Removed " + ((SuperArray)pigeon).remove(2) );
     System.out.println(pigeon);
     System.out.println("Printing SuperArray pigeon post-remove...");
-    System.out.println( ((SuperArray)pigeon).remove(2) );
+    System.out.println("Removed " + ((SuperArray)pigeon).remove(2) );
     System.out.println(pigeon);
 
     ((SuperArray)pigeon).add(1,c);
     System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println("Inserted " + c);
     System.out.println(pigeon);
     ((SuperArray)pigeon).add(2,e);
     System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println("Inserted " + e);    
     System.out.println(pigeon);
     ((SuperArray)pigeon).add(0,d);
     System.out.println("Printing SuperArray pigeon post-insert...");
+    System.out.println("Inserted " + d);    
     System.out.println(pigeon);
+    
     /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
