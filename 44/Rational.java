@@ -19,7 +19,6 @@
  * comparison
  ******************************/
 
-
 public class Rational implements Comparable
 {
   //   Instance variables for the numerator and denominator
