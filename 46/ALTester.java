@@ -18,6 +18,7 @@ public class ALTester {
 
     public static void main(String[] args) {
         
+        //ArrayList for Comparable?
         ArrayList<Comparable> pigeon = new ArrayList<Comparable>(23);
         System.out.println("Printing empty ArrayList pigeon...");
 
