@@ -1,18 +1,18 @@
 //Wenting Li
 //APCS1 pd08    
-//HW47 -- Ascending
-//2017-12-06 
+//HW49 -- Halving the halves
+//2017-12-08 
 
 //
 //=====================================
 
 /********************************
- * class OrderedArrayList
+ * class OrderedArrayList v2.0
  * wrapper class for ArrayList.
  * Imposes the restriction that stored items 
  * must remain sorted in ascending order
 
- * NOTE: acts on the premesis that given array is already sorted
+ *
  ********************************/
 
 //ArrayList's implementation is in the java.util package
@@ -28,40 +28,51 @@ public class OrderedArrayList
   // default constructor initializes instance variable _data
   public OrderedArrayList()
   {
-    _data = new ArrayList<Comparable>();
+    _data = new ArrayList<Comparable>();    
   }
+
 
   public String toString()
   {
-    return _data.toString();
-    
-    return ""; //placeholder 
+    return _data.toString(); 
   }
+
 
   public Comparable remove( int index )
   {	
-    // *** YOUR IMPLEMENTATION HERE ***
-    return ""; //placeholder 
+    return _data.remove(index); 
   }
 
 
   public int size()
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
-    return -1; //placeholder 
+    return _data.size();
   }
 
     
   public Comparable get( int index )
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
-    return ""; //placeholder  
+    return _data.get(index); 
   }
 
 
-  public void add(Comparable newVal)
+  /***
+   * add takes as input any comparable object 
+   * (i.e., any object of a class implementing interface Comparable)
+   * inserts newVal at the appropriate index
+   * maintains ascending order of elements
+   * uses a linear search to find appropriate index
+   ***/
+  public void add( Comparable newVal )
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
+    for( int p = 0; p < _data.size(); p++ ) {
+	    if ( newVal.compareTo( _data.get(p) ) < 0 ) { 
+        //newVal < oal[p]
+        _data.add( p, newVal );
+        return; //Q:why not break?
+	    }
+    }
+    _data.add( newVal ); //newVal > every item in oal, so add to end 
   }
 
 
@@ -69,7 +80,6 @@ public class OrderedArrayList
   // main method solely for testing purposes
   public static void main( String[] args )
   {
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     OrderedArrayList Franz = new OrderedArrayList();
 
     // testing linear search
@@ -86,6 +96,7 @@ public class OrderedArrayList
         break;
       }
     }
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
