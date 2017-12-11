@@ -1,5 +1,5 @@
 //Wenting Li
-//APCS1 pd08    
+//APCS1 pd08    //inspired by Woosuk Lee pd08
 //HW49 -- Halving the halves
 //2017-12-08 
 
@@ -12,7 +12,7 @@
  * Imposes the restriction that stored items 
  * must remain sorted in ascending order
 
- *
+ * a binary search to locate the point of insertion for a new element
  ********************************/
 
 //ArrayList's implementation is in the java.util package
@@ -76,11 +76,45 @@ public class OrderedArrayList
   }
 
 
+  public void addBin( Comparable newVal )
+  {      
+    int index = _data.size() / 2; //sets index to the middle value
+    int upper = _data.size(); //holds the value of the upper bound limit
+    //while(true) format runs until the code hits a "break"   
+    while(true){
+      //if newVal fits right between or is equal to index and index-1,
+      //add the new Value at index and break
+       if((newVal.compareTo(_data.get(index-1)) >= 0 ) && 
+          (newVal.compareTo(_data.get(index)) <= 0 )) 
+        {
+           _data.add(index,newVal);
+           break;
+        }
+      //if value is greater than middle value,
+      //set index to middle value of the second half
+       else if(newVal.compareTo(_data.get(index)) > 0 ) 
+       {
+         index = (index + upper)/2;
+       }
+      //if value is less than middle value,
+      //set upper limit to the index & index to middle value of the first half
+       else
+        {
+         upper = index; 
+         index = index / 2;
+        }
+      }
+    }
+
+
 
   // main method solely for testing purposes
   public static void main( String[] args )
   {
     OrderedArrayList Franz = new OrderedArrayList();
+
+    //Franz.add(0);
+    //Franz.add(1);
 
     // testing linear search
     for( int i = 0; i < 15; i++ )
@@ -89,14 +123,19 @@ public class OrderedArrayList
 
     //check for sorted-ness
     //if msg does not appear, list was sorted
-    for( int i=0; i<Franz.size()-1; i++ ) {
-      System.out.println("at i: " + Franz.get(i) );
+    int foo = Franz.size() - 1;    
+    for( int i=0; i<foo; i++ ) {
+      System.out.println("at index "+  i + ": " + Franz.get(i) );
       if ( Franz.get(i).compareTo(Franz.get(i+1)) > 0 ) {
         System.out.println( " *** NOT sorted *** " );
         break;
       }
     }
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //printing last element without comparing
+    System.out.println("at index "+ foo + ": " + Franz.get(foo ));
+
+    Franz.addBin(24);    
+    System.out.println( Franz );    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 

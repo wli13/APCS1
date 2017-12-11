@@ -34,34 +34,28 @@ public class OrderedArrayList
   public String toString()
   {
     return _data.toString();
-    
-    return ""; //placeholder 
   }
 
   public Comparable remove( int index )
   {	
-    // *** YOUR IMPLEMENTATION HERE ***
-    return ""; //placeholder 
+    return _data.remove();
   }
 
 
   public int size()
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
-    return -1; //placeholder 
+    return _data.size();
   }
-
     
   public Comparable get( int index )
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
-    return ""; //placeholder  
+    return _data.get();
   }
 
 
   public void add(Comparable newVal)
   { 
-    // *** YOUR IMPLEMENTATION HERE ***
+    
   }
 
 
