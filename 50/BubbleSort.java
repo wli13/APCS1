@@ -1,3 +1,11 @@
+//Wenting Li
+//APCS1 pd08 
+//HW50 -- Dat Bubbly Tho
+//2017-12-11
+
+//FINISHED
+//=====================================
+
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  ******************************/
