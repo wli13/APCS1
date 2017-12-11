@@ -69,6 +69,20 @@ public class SelectionSort
     }
   }//end selectionSortV
 
+  /* Alternatively (pass from left to right):
+  public static void selectionSortV( ArrayList<Comparable> data ) {
+    int smallest;
+    for(int i = 0; i < data.size() - 1; i++){
+      smallest = i;
+      for(int n = i; n < data.size(); n++){
+        if(data.get(smallest).compareTo(data.get(n)) > 0){
+          smallest = n;
+        }
+      }
+      data.set(i,data.set(smallest,data.get(i)));
+    }      
+  }//end selectionSortV */
+
   // ArrayList-returning selectionSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
