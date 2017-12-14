@@ -19,6 +19,7 @@ public class MySorts {
   // postcondition: data's elements sorted in ascending order
   public static void bubbleSort( ArrayList<Comparable> data )
   {
+    //int swaps = 0;
     //make n-1 passes across collection
     for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
 	    System.out.println( "commencing pass #" + passCtr + "..." );
@@ -28,10 +29,12 @@ public class MySorts {
         //if element at i > element at i+1, swap
         if ( data.get(i).compareTo(data.get(i+1) ) > 0 ) {
           data.set( i, data.set(i+1,data.get(i)) );	
+          //swaps++;
         }
         //System.out.println(data); //diag: show current state of list
 	    }
     }
+    //System.out.println("total swaps: "+swaps);
   }
 
 
@@ -40,6 +43,8 @@ public class MySorts {
   // postcondition: data's elements sorted in ascending order
   public static void selectionSort( ArrayList<Comparable> data ) 
   {
+    //int swaps = 0;
+
     //note: this version places greatest value at rightmost end,
 
     //maxPos will point to position of SELECTION (greatest value)
@@ -56,7 +61,9 @@ public class MySorts {
 	    }
 	    data.set( maxPos, ( data.set( pass, data.get(maxPos) ) ) );
 	    System.out.println( "after swap: " +  data );//diag
+      //swaps++;
     }
+    //System.out.println("total swaps: "+swaps);    
   }//end selectionSortV
 
 
@@ -65,6 +72,8 @@ public class MySorts {
   // postcondition: data's elements sorted in ascending order
   public static void insertionSort( ArrayList<Comparable> data )
   {
+    //int swaps = 0;
+
     for( int partition = 1; partition < data.size(); partition++ ) {
 	    //partition marks first item in unsorted region
 
@@ -80,12 +89,14 @@ public class MySorts {
         if ( data.get(i).compareTo( data.get(i-1) ) < 0 ) {
           //diag:
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." );
-          data.set( i, data.set( i-1, data.get(i) ) ); 
+          data.set( i, data.set( i-1, data.get(i) ) );
+          //swaps++;           
         }
         else 
           break; 
 	    }
     }
+    //System.out.println("total swaps: "+swaps);    
   }//end insertionSortV  
   
 }//end of class MySorts
