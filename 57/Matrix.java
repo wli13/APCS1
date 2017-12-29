@@ -120,7 +120,7 @@ public class Matrix
               pigeon = false;
 			        break outer;        
             }
-            else if (isEmpty(i,j) && !r.isEmpty(i,j) ) {
+            else if (!r.isEmpty(i,j) ) {
               pigeon = false;
 			        break outer;
             }            

@@ -123,7 +123,7 @@ public class Matrix
               pigeon = false;
 			        break outer;        
             }
-            else if (isEmpty(i,j) && !r.isEmpty(i,j) ) {
+            else if (!r.isEmpty(i,j) ) {
               pigeon = false;
 			        break outer;
             }            
@@ -176,11 +176,19 @@ public class Matrix
 
     //replaces row r with 1D array newRow
     //returns old row
-    public Object [] setRow( int r, Object[] newRow )
+    public Object[] setRow( int r, Object[] newRow )
     {
-    }//O(?)
+    	//first check for proper dimension:
+	    if (newRow.length != size() ) 
+        return null;
 
-    public Object [] setCol( int c, Object[] newCol )
+      r -= 1;
+      Object[] temp = _matrix[r];
+      _matrix[r] = newRow;
+      return temp;
+    }//O(1)
+
+    public Object[] setCol( int c, Object[] newCol )
     {
     }//O(?)
 
